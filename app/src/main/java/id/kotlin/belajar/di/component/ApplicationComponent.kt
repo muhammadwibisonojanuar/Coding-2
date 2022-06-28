@@ -9,9 +9,9 @@ import id.kotlin.belajar.di.module.Networkmodule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-    AndroidSupportInjectionModule::class, Networkmodule::class,
-    ActivityBuilder::class
-])
+@Component(modules = [AndroidSupportInjectionModule::class, Networkmodule::class,
+    ActivityBuilder::class])
+
+
 interface ApplicationComponent : AndroidInjector<BelajarApp>
 

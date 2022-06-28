@@ -3,10 +3,10 @@ package id.kotlin.belajar.di.module
 
 
 
-import id.kotlin.belajar.BuildConfig
 import dagger.Module
 import dagger.Provides
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
+import id.kotlin.belajar.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -46,6 +46,7 @@ class Networkmodule {
             addCallAdapterFactory(RxJava3CallAdapterFactory.createAsync())
         }
     }
+
 
 
 }

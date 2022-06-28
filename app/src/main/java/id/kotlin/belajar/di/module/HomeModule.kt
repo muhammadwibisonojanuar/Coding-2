@@ -18,7 +18,14 @@ abstract class HomeModule{
         @Provides
         fun providesHomeDatasource(retrofit: Retrofit): HomeDatasource=
             retrofit.create(HomeDatasource::class.java)
+
+        @Provides
+        fun provideRetrofit() : Retrofit {
+            return Retrofit.Builder()
+                .build()
+        }
     }
+
     @Binds
     @IntoMap
     @ViewModelKey(HomeViewModel::class)

@@ -1,6 +1,5 @@
 package id.kotlin.belajar
 
-import dagger.android.AndroidInjection.inject
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import id.kotlin.belajar.di.component.DaggerApplicationComponent

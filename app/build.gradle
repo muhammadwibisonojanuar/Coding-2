@@ -2,7 +2,10 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+
 }
+
+
 
 android {
     compileSdk 32
@@ -16,8 +19,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField 'String', 'BASE_URL', '"https://api.themoviedb.org"'
-        buildConfigField 'String', 'API_KEY', '"7049dc2a6efaad5c6210a405c7dd32ac"'
+        buildConfigField "String", 'BASE_URL', '"https://api.themoviedb.org"'
+        buildConfigField "String", 'API_KEY', '"7049dc2a6efaad5c6210a405c7dd32ac"'
     }
 
     buildTypes {
@@ -33,31 +36,48 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
     namespace 'id.kotlin.belajar'
 }
 
 
 
 
+
+
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.6.0'
-    implementation 'com.google.android.gms:play-services-ads-lite:20.6.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.android.gms:play-services-ads-lite:21.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6'
+    implementation 'com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.9'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.9'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.dagger:dagger:2.41'
-    implementation 'com.google.dagger:dagger-android:2.35.1'
-    implementation 'com.google.dagger:dagger-android-support:2.35.1'
-    kapt 'com.google.dagger:dagger-compiler:2.41'
-    kapt 'com.google.dagger:dagger-android-processor:2.41'
-    kapt 'org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.3.0'
+    implementation 'com.google.dagger:dagger:2.42'
+    implementation 'com.google.dagger:dagger-android:2.42'
+    implementation 'com.google.dagger:dagger-android-support:2.42'
+    kapt 'com.google.dagger:dagger-compiler:2.42'
+    kapt 'com.google.dagger:dagger-android-processor:2.42'
+    kapt 'org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.42"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 }
